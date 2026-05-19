@@ -1,104 +1,13 @@
-<html>
-<title>
-DuraneCompany
-</title>
 
-<h1>
-Welcome to DuraneCompany
-</h1>
-
-<p>
-  copyright 2025
-</p>
-</html>
-<section class="gallery-section">
-  <h2>Our Work Gallery</h2>
-  <p>Click any photo to view it larger.</p>
-
-  <div class="gallery">
-    <a href="pictures/work1.jpg">
-      <img src="pictures/work1.jpg" alt="Durane Company Work 1">
-    </a>
-
-    <a href="pictures/work2.jpg">
-      <img src="pictures/work2.jpg" alt="Durane Company Work 2">
-    </a>
-
-    <a href="pictures/work3.jpg">
-      <img src="pictures/work3.jpg" alt="Durane Company Work 3">
-    </a>
-
-    <a href="pictures/work4.jpg">
-      <img src="pictures/work4.jpg" alt="Durane Company Work 4">
-    </a>
-  </div>
-</section>
-
-<style>
-  .gallery-section {
-    padding: 50px 20px;
-    text-align: center;
-    background: #f5f5f5;
-  }
-
-  .gallery-section h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  .gallery-section p {
-    color: #555;
-    margin-bottom: 30px;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    max-width: 1100px;
-    margin: auto;
-  }
-
-  .gallery a {
-    display: block;
-    overflow: hidden;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    background: white;
-  }
-
-  .gallery img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery img:hover {
-    transform: scale(1.08);
-  }
-</style>
-<div class="gallery">
-  <a href="pictures/work1.jpg"><img src="pictures/work1.jpg" alt="driveway"></a>
-  <a href="pictures/work2.jpg"><img src="pictures/work2.jpg" alt="driveway2"></a>
-  <a href="pictures/work3.jpg"><img src="pictures/work3.jpg" alt="driveway3"></a>
-  <a href="pictures/work4.jpg"><img src="pictures/work4.jpg" alt="driveway4"></a>
-  <a href="pictures/work5.jpg"><img src="pictures/work5.jpg" alt="driveway5"></a>
-  <a href="pictures/work6.jpg"><img src="pictures/work6.jpg" alt="driveway6"></a>
-  <a href="pictures/work7.jpg"><img src="pictures/work7.jpg" alt="driveway7"></a>
-</div>
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>DuraneCompany</title>
 
   <style>
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -106,22 +15,11 @@ Welcome to DuraneCompany
       color: #222;
     }
 
-    header {
+    header, footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 50px 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #ccc;
+      padding: 35px 20px;
     }
 
     .section {
@@ -130,35 +28,23 @@ Welcome to DuraneCompany
       margin: auto;
     }
 
-    .section h2 {
+    h2 {
       text-align: center;
       font-size: 34px;
-      margin-bottom: 30px;
     }
 
-    .services {
+    .services, .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
     }
 
-    .service-box {
+    .service-box, .about-box, .contact-box {
       background: white;
       padding: 25px;
       border-radius: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
-      transition: 0.3s;
-    }
-
-    .service-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
     }
 
     .gallery img {
@@ -167,38 +53,7 @@ Welcome to DuraneCompany
       object-fit: cover;
       border-radius: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
     }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .about-box {
-      background: white;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      line-height: 1.7;
-    }
-
-    .contact-box {
-      background: white;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      line-height: 2;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 50px;
-    }
-
   </style>
 </head>
 
@@ -209,110 +64,63 @@ Welcome to DuraneCompany
     <p>Commercial and Residential Concrete Services</p>
   </header>
 
-  <!-- SERVICES -->
-
   <section class="section">
-
     <h2>Construction Services</h2>
 
     <div class="services">
-
       <div class="service-box">Sidewalks</div>
-
       <div class="service-box">Concrete Boxes and Culverts</div>
-
       <div class="service-box">Curb & Gutters</div>
-
       <div class="service-box">Foundations</div>
-
       <div class="service-box">Stamped Concrete</div>
-
       <div class="service-box">Driveways</div>
-
       <div class="service-box">Parking Lots</div>
-
       <div class="service-box">Patios</div>
-
       <div class="service-box">Retaining Walls</div>
-
     </div>
-
   </section>
 
-  <!-- GALLERY -->
-
   <section class="section">
-
     <h2>Our Work Gallery</h2>
 
     <div class="gallery">
-
-      <img src="pictures/work1.jpg" alt="Work 1">
-
-      <img src="pictures/work2.jpg" alt="Work 2">
-
-      <img src="pictures/work3.jpg" alt="Work 3">
-
-      <img src="pictures/work4.jpg" alt="Work 4">
-
-      <img src="pictures/work5.jpg" alt="Work 5">
-
-      <img src="pictures/work6.jpg" alt="Work 6">
-
+      <img src="pictures/work1.jpg" alt="Driveway">
+      <img src="pictures/work2.jpg" alt="Concrete Work">
+      <img src="pictures/work3.jpg" alt="Foundation">
+      <img src="pictures/work4.jpg" alt="Sidewalk">
+      <img src="pictures/work5.jpg" alt="Patio">
+      <img src="pictures/work6.jpg" alt="Stamped Concrete">
+      <img src="pictures/work7.jpg" alt="Parking Lot">
     </div>
-
   </section>
 
-  <!-- ABOUT -->
-
   <section class="section">
-
     <h2>About Us</h2>
 
     <div class="about-box">
-
       <h3>Commercial and Residential Services</h3>
-
       <p>
-        Safety is central to our company values, driving our commitment to
-        providing a secure environment for employees and customers alike.
-        We integrate safety measures into every aspect of our operations
-        to protect well-being, uphold quality standards, and ensure
-        operational efficiency.
+        Safety is central to our company values. We are committed to providing
+        a secure environment for employees and customers while delivering
+        quality concrete work.
       </p>
-
     </div>
-
   </section>
 
-  <!-- CONTACT -->
-
   <section class="section">
-
     <h2>Contact Us</h2>
 
     <div class="contact-box">
-
       <p><strong>Office:</strong> (979) 721-1204</p>
-
       <p><strong>Cell:</strong> (979) 213-2797</p>
-
       <p><strong>Email:</strong> efrain.duran33@gmail.com</p>
-
       <p><strong>Email:</strong> cesar.duran48148@gmail.com</p>
-
     </div>
-
   </section>
 
-  <!-- FOOTER -->
-
   <footer>
-
     <p>Credits: Cesar Duran & Efrain Duran</p>
-
     <p>Copyright 2025 DuraneCompany</p>
-
   </footer>
 
 </body>
