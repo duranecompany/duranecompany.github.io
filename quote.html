@@ -63,30 +63,30 @@
         <form id="quoteForm" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="John Smith" required>
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="name" placeholder="John Smith" required>
             </div>
             <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com">
-            </div>
-            <div class="form-group">
-              <label for="location">Job Location *</label>
-              <input type="text" id="location" name="location" placeholder="City, TX" required>
+              <label for="fphone">Phone Number *</label>
+              <input type="tel" id="fphone" name="phone" placeholder="(555) 000-0000" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="workType">Type of Work *</label>
-              <select id="workType" name="workType" required>
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" name="email" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="flocation">Job Location *</label>
+              <input type="text" id="flocation" name="location" placeholder="City, TX" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fworkType">Type of Work *</label>
+              <select id="fworkType" name="work_type" required>
                 <option value="" disabled selected>Select a type…</option>
                 <option>Concrete — Foundation / Footing</option>
                 <option>Concrete — Driveway / Parking Lot</option>
@@ -106,26 +106,30 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="size">Estimated Size</label>
-              <input type="text" id="size" name="size" placeholder="e.g. 2,000 sq ft, 1 acre">
+              <label for="fsize">Estimated Size</label>
+              <input type="text" id="fsize" name="estimated_size" placeholder="e.g. 2,000 sq ft, 1 acre">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="message">Project Details *</label>
-            <textarea id="message" name="message" placeholder="Describe your project — what needs to be done, timeline, any other details…" required></textarea>
+            <label for="fmessage">Project Details *</label>
+            <textarea id="fmessage" name="message" placeholder="Describe your project — what needs to be done, timeline, any other details…" required></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;font-size:0.8rem;">
+          <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;padding:1rem;font-size:0.8rem;">
             Send Quote Request
           </button>
+
+          <p id="formError" style="display:none;margin-top:1rem;color:hsl(0 70% 55%);text-align:center;font-size:0.9rem;">
+            Something went wrong. Please try again or call us directly at (979) 721-1204.
+          </p>
         </form>
       </div>
 
-      <div id="thankYou" style="display:none;text-align:center;padding:4rem 2rem;background:var(--bg2);border:1px solid hsl(38 95% 52% / 0.4);margin-top:1rem;">
+      <div id="thankYou" style="display:none;text-align:center;padding:4rem 2rem;background:var(--bg2);border:1px solid hsl(38 95% 52% / 0.4);">
         <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-        <h3 style="font-size:1.5rem;font-weight:900;margin-bottom:0.75rem;">Request Sent!</h3>
-        <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem;">Your default email app should have opened with a pre-filled message. We'll get back to you as soon as possible.</p>
+        <h3 style="font-size:1.5rem;font-weight:900;margin-bottom:0.75rem;">Quote Request Sent!</h3>
+        <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem;">Your message has been delivered to our team. We'll be in touch as soon as possible.</p>
         <button class="btn-outline" onclick="resetForm()">Submit Another Request</button>
       </div>
     </div>
@@ -148,55 +152,62 @@
   </footer>
 
   <script>
-    const EMAILS = 'efrain.duran33@gmail.com,cesar.duran48148@gmail.com';
-
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
       const f = e.target;
-      const name = f.name.value;
-      const phone = f.phone.value;
-      const email = f.email.value;
-      const location = f.location.value;
-      const workType = f.workType.value;
-      const size = f.size.value;
-      const message = f.message.value;
+      const btn = document.getElementById('submitBtn');
+      const errMsg = document.getElementById('formError');
 
-      const subject = encodeURIComponent(`Quote Request – ${workType || 'Concrete/Dirt Work'} – ${name}`);
-      const body = encodeURIComponent(
-`Hello Duran E Company,
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      errMsg.style.display = 'none';
 
-I would like to request a quote for the following job:
+      const data = {
+        name:           f.name.value,
+        phone:          f.phone.value,
+        email:          f.email.value,
+        location:       f.location.value,
+        work_type:      f.work_type.value,
+        estimated_size: f.estimated_size.value,
+        message:        f.message.value,
+        _cc:            'cesar.duran48148@gmail.com',
+        _subject:       `Quote Request — ${f.work_type.value || 'Concrete/Dirt Work'} — ${f.name.value}`,
+        _template:      'box',
+        _captcha:       'false'
+      };
 
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Job Location: ${location}
-Type of Work: ${workType}
-Estimated Size: ${size || 'N/A'}
-
-Project Details:
-${message}
-
-Please reach out at your earliest convenience.
-
-Thank you!`
-      );
-
-      window.location.href = `mailto:${EMAILS}?subject=${subject}&body=${body}`;
-      document.getElementById('formWrap').style.display = 'none';
-      document.getElementById('thankYou').style.display = 'block';
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/efrain.duran33@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (json.success === 'true' || json.success === true) {
+          document.getElementById('formWrap').style.display = 'none';
+          document.getElementById('thankYou').style.display = 'block';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Send Quote Request';
+        errMsg.style.display = 'block';
+      }
     }
 
     function resetForm() {
       document.getElementById('quoteForm').reset();
+      document.getElementById('submitBtn').disabled = false;
+      document.getElementById('submitBtn').textContent = 'Send Quote Request';
+      document.getElementById('formError').style.display = 'none';
       document.getElementById('formWrap').style.display = 'block';
       document.getElementById('thankYou').style.display = 'none';
     }
 
-    // Focus gold border
     document.querySelectorAll('input, select, textarea').forEach(el => {
       el.addEventListener('focus', () => el.style.borderColor = 'hsl(38 95% 52%)');
-      el.addEventListener('blur', () => el.style.borderColor = 'hsl(30 12% 22%)');
+      el.addEventListener('blur',  () => el.style.borderColor = 'hsl(30 12% 22%)');
     });
   </script>
 </body>
