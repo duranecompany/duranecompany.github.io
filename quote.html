@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Quote — Duran E Company</title>
+  <meta name="description" content="Request a free estimate for your concrete or dirt work project.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Duran E Company">
+      <span>DURAN E <em>COMPANY</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="quote.html" class="btn-primary cta-nav active" style="font-size:0.72rem;padding:0.6rem 1.25rem;">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="hero-grid" style="opacity:0.5;position:absolute;inset:0;"></div>
+    <div style="position:relative;">
+      <span class="section-label"><span class="divider-line"></span>Free Estimate</span>
+      <h1>Get a <span class="gold">Quote</span></h1>
+      <p>Fill out the form below and we'll get back to you as soon as possible. No pressure — just an honest estimate.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT INFO -->
+  <div class="section">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h4>Office</h4>
+        <p>(979) 721-1204</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📱</div>
+        <h4>Cell</h4>
+        <p>(979) 213-2797</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h4>Email</h4>
+        <p>efrain.duran33@gmail.com</p>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h4>Email</h4>
+        <p>cesar.duran48148@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="quote-form">
+      <div id="formWrap">
+        <form id="quoteForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="location">Job Location *</label>
+              <input type="text" id="location" name="location" placeholder="City, TX" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="workType">Type of Work *</label>
+              <select id="workType" name="workType" required>
+                <option value="" disabled selected>Select a type…</option>
+                <option>Concrete — Foundation / Footing</option>
+                <option>Concrete — Driveway / Parking Lot</option>
+                <option>Concrete — Slab / Flatwork</option>
+                <option>Concrete — Sidewalk / Pathway</option>
+                <option>Concrete — Curb &amp; Gutter</option>
+                <option>Concrete — Retaining Wall</option>
+                <option>Concrete — Stamped / Decorative</option>
+                <option>Concrete — Repair / Resurfacing</option>
+                <option>Dirt Work — Site Clearing</option>
+                <option>Dirt Work — Grading / Leveling</option>
+                <option>Dirt Work — Excavation</option>
+                <option>Dirt Work — Trenching</option>
+                <option>Dirt Work — Backfill / Compaction</option>
+                <option>Dirt Work — Drainage</option>
+                <option>Other / Multiple</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="size">Estimated Size</label>
+              <input type="text" id="size" name="size" placeholder="e.g. 2,000 sq ft, 1 acre">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea id="message" name="message" placeholder="Describe your project — what needs to be done, timeline, any other details…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;font-size:0.8rem;">
+            Send Quote Request
+          </button>
+        </form>
+      </div>
+
+      <div id="thankYou" style="display:none;text-align:center;padding:4rem 2rem;background:var(--bg2);border:1px solid hsl(38 95% 52% / 0.4);margin-top:1rem;">
+        <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+        <h3 style="font-size:1.5rem;font-weight:900;margin-bottom:0.75rem;">Request Sent!</h3>
+        <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem;">Your default email app should have opened with a pre-filled message. We'll get back to you as soon as possible.</p>
+        <button class="btn-outline" onclick="resetForm()">Submit Another Request</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="logo.png" alt="Duran E Company">
+      <span>DURAN E <em>COMPANY</em></span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+    <div class="footer-copy">© 2025 Duran E Company. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const EMAILS = 'efrain.duran33@gmail.com,cesar.duran48148@gmail.com';
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const f = e.target;
+      const name = f.name.value;
+      const phone = f.phone.value;
+      const email = f.email.value;
+      const location = f.location.value;
+      const workType = f.workType.value;
+      const size = f.size.value;
+      const message = f.message.value;
+
+      const subject = encodeURIComponent(`Quote Request – ${workType || 'Concrete/Dirt Work'} – ${name}`);
+      const body = encodeURIComponent(
+`Hello Duran E Company,
+
+I would like to request a quote for the following job:
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Job Location: ${location}
+Type of Work: ${workType}
+Estimated Size: ${size || 'N/A'}
+
+Project Details:
+${message}
+
+Please reach out at your earliest convenience.
+
+Thank you!`
+      );
+
+      window.location.href = `mailto:${EMAILS}?subject=${subject}&body=${body}`;
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('thankYou').style.display = 'block';
+    }
+
+    function resetForm() {
+      document.getElementById('quoteForm').reset();
+      document.getElementById('formWrap').style.display = 'block';
+      document.getElementById('thankYou').style.display = 'none';
+    }
+
+    // Focus gold border
+    document.querySelectorAll('input, select, textarea').forEach(el => {
+      el.addEventListener('focus', () => el.style.borderColor = 'hsl(38 95% 52%)');
+      el.addEventListener('blur', () => el.style.borderColor = 'hsl(30 12% 22%)');
+    });
+  </script>
+</body>
+</html>

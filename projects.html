@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Duran E Company</title>
+  <meta name="description" content="Browse our portfolio of completed concrete and dirt work projects across Texas.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Duran E Company">
+      <span>DURAN E <em>COMPANY</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="quote.html" class="btn-primary cta-nav" style="font-size:0.72rem;padding:0.6rem 1.25rem;">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="hero-grid" style="opacity:0.5;position:absolute;inset:0;"></div>
+    <div style="position:relative;">
+      <span class="section-label"><span class="divider-line"></span>Our Portfolio</span>
+      <h1>Built Across <span class="gold">Texas</span></h1>
+      <p>From house pads to commercial slabs — here's a look at the work we've done for our clients.</p>
+    </div>
+  </div>
+
+  <!-- PROJECTS GRID -->
+  <div class="section">
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-cat="All">All</button>
+      <button class="filter-btn" data-cat="Concrete">Concrete</button>
+      <button class="filter-btn" data-cat="Dirt Work">Dirt Work</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid"></div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Let's Build Your <span class="gold">Next Project</span></h2>
+    <p>Get in touch for a free, no-obligation estimate on your concrete or dirt work job.</p>
+    <div class="ctas">
+      <a href="quote.html" class="btn-primary">Get a Free Quote</a>
+      <a href="services.html" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="logo.png" alt="Duran E Company">
+      <span>DURAN E <em>COMPANY</em></span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+    <div class="footer-copy">© 2025 Duran E Company. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const ALL_PROJECTS = [
+      { name:"Commercial Interior Slab & Grading", cat:"Concrete", loc:"College Station, TX", year:"2026", status:"Completed", size:"~25,809 sq ft", desc:"Interior concrete flatwork and site grading for a large commercial retail building. Included subgrade prep, grading for proper drainage, and a full interior concrete slab pour.", photo:"pictures/project-sprouts.jpg" },
+      { name:"School Grandstand Foundation", cat:"Concrete", loc:"College Station, TX", year:"2024", status:"Completed", size:"~3,000 sq ft", desc:"Concrete foundation pour for a school grandstand using a pump truck. Full forming, rebar, and vapor barrier prep with a full crew completing the pour at dusk.", photo:"pictures/project-grandstand.jpg" },
+      { name:"House Pad & Porch", cat:"Concrete", loc:"Iola, TX", year:"2026", status:"Completed", size:"~2,300 sq ft", desc:"Residential house pad with full rebar grid, vapor barrier, and porch slab. Forming, rebar layout, and pour completed for a new home build on a rural property.", photo:"pictures/project-housepad.jpg" },
+      { name:"Sidewalk, Parking Lot & AC Pad Concrete", cat:"Concrete", loc:"Texas", year:"2025", status:"Completed", size:"~11,000 sq ft", desc:"Concrete work covering sidewalks, parking lot flatwork, and AC unit pads for a commercial building under construction.", photo:"pictures/project-sanjude.jpg" },
+      { name:"Warehouse Concrete Slab", cat:"Concrete", loc:"Dallas, TX", year:"2024", status:"Completed", size:"18,000 sq ft", desc:"Large industrial warehouse floor slab with wire mesh reinforcement, control joints, and machine-troweled finish for a heavy equipment facility." },
+      { name:"New Home Site Grading", cat:"Dirt Work", loc:"Fort Worth, TX", year:"2024", status:"Completed", size:"1.2 acres", desc:"Full site clearing, rough grading, and fine grading for a new residential build. Established proper drainage flow away from the foundation pad." },
+      { name:"Commercial Parking Lot", cat:"Concrete", loc:"Arlington, TX", year:"2023", status:"Completed", size:"22,000 sq ft", desc:"Full demo of existing asphalt, subbase prep, and pour of new 6-inch concrete parking lot with curbs, drainage inlets, and ADA ramps." },
+      { name:"Residential Driveway & Walkway", cat:"Concrete", loc:"Burleson, TX", year:"2023", status:"Completed", size:"2,800 sq ft", desc:"Exposed aggregate driveway, front walkway, and back patio for a custom home. Included forming, rebar, pour, and broom finish." },
+      { name:"Retention Pond Excavation", cat:"Dirt Work", loc:"Grand Prairie, TX", year:"2023", status:"Completed", size:"3.5 acre pond", desc:"Excavation and shaping of a commercial retention pond with shaped banks, outlet structure prep, and surrounding area grading." },
+      { name:"Strip Mall Foundation", cat:"Concrete", loc:"Midlothian, TX", year:"2023", status:"Completed", size:"9,500 sq ft slab", desc:"Perimeter footings, grade beams, and monolithic slab for a 5-unit strip mall. Included all forming, rebar layout, and pour coordination." },
+      { name:"Road Subbase & Trenching", cat:"Dirt Work", loc:"Waxahachie, TX", year:"2024", status:"In Progress", size:"1,800 linear ft", desc:"Subbase grading for a private road in a new development, plus 1,800 feet of utility trenching for water and electric service." },
+      { name:"Retaining Wall — Hillside Property", cat:"Concrete", loc:"Cleburne, TX", year:"2023", status:"Completed", size:"180 linear ft / 6 ft tall", desc:"Cast-in-place concrete retaining wall on a steep hillside lot to hold back fill and create a usable yard area for a new custom home." },
+      { name:"Commercial Site Clearing", cat:"Dirt Work", loc:"Ennis, TX", year:"2022", status:"Completed", size:"6 acres", desc:"Full site clearing of trees, brush, and old structures followed by rough grading and compaction in preparation for a new commercial development." },
+      { name:"School Sidewalk & Curb Project", cat:"Concrete", loc:"Centerville, TX", year:"2025", status:"Completed", size:"3,200 linear ft", desc:"Replacement of deteriorated sidewalks and curbs throughout an elementary school campus, completed during summer break to avoid disruption." },
+      { name:"Backfill & Compaction — New Build", cat:"Dirt Work", loc:"Red Oak, TX", year:"2024", status:"Completed", size:"0.5 acres", desc:"Backfill and compaction around a newly poured foundation on a residential build, with engineered fill brought in and compacted in lifts to spec." },
+    ];
+
+    const emojis = { Concrete: '🧱', 'Dirt Work': '🚜' };
+    let active = 'All';
+
+    function render() {
+      const grid = document.getElementById('projectsGrid');
+      const list = active === 'All' ? ALL_PROJECTS : ALL_PROJECTS.filter(p => p.cat === active);
+      grid.innerHTML = list.map(p => `
+        <div class="project-card">
+          ${p.photo
+            ? `<img src="${p.photo}" alt="${p.name}" class="project-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+            : ''}
+          <div class="project-photo-placeholder" ${p.photo ? 'style="display:none"' : ''}>${emojis[p.cat]||'🏗️'}</div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category ${p.cat==='Concrete'?'cat-concrete':'cat-dirt'}">${p.cat}</span>
+              <span class="project-status ${p.status==='Completed'?'status-completed':'status-inprogress'}">${p.status}</span>
+            </div>
+            <h3>${p.name}</h3>
+            <div class="project-location">📍 ${p.loc} &nbsp;·&nbsp; ${p.year}</div>
+            <div class="project-size">${p.size}</div>
+            <p class="project-desc">${p.desc}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('filterBar').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      active = btn.dataset.cat;
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

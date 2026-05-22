@@ -1,127 +1,217 @@
-
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DuraneCompany</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
-    }
-
-    header, footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    .section {
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 34px;
-    }
-
-    .services, .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .service-box, .about-box, .contact-box {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-  </style>
+  <title>Duran E Company — Concrete & Dirt Work</title>
+  <meta name="description" content="Duran E Company specializes in concrete and dirt work — from foundations and flatwork to site grading and excavation.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <header>
-    <h1>DuraneCompany</h1>
-    <p>Commercial and Residential Concrete Services</p>
-  </header>
-
-  <section class="section">
-    <h2>Construction Services</h2>
-
-    <div class="services">
-      <div class="service-box">Sidewalks</div>
-      <div class="service-box">Concrete Boxes and Culverts</div>
-      <div class="service-box">Curb & Gutters</div>
-      <div class="service-box">Foundations</div>
-      <div class="service-box">Stamped Concrete</div>
-      <div class="service-box">Driveways</div>
-      <div class="service-box">Parking Lots</div>
-      <div class="service-box">Patios</div>
-      <div class="service-box">Retaining Walls</div>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Duran E Company">
+      <span>DURAN E <em>COMPANY</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="quote.html" class="btn-primary cta-nav" style="font-size:0.72rem;padding:0.6rem 1.25rem;">Get a Quote</a>
     </div>
-  </section>
+  </nav>
 
-  <section class="section">
-    <h2>Our Work Gallery</h2>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-lines" id="heroLines"></div>
 
-    <div class="gallery">
-      <img src="pictures/work1.jpg" alt="Driveway">
-      <img src="pictures/work2.jpg" alt="Concrete Work">
-      <img src="pictures/work3.jpg" alt="Foundation">
-      <img src="pictures/work4.jpg" alt="Sidewalk">
-      <img src="pictures/work5.jpg" alt="Patio">
-      <img src="pictures/work6.jpg" alt="Stamped Concrete">
-      <img src="pictures/work7.jpg" alt="Parking Lot">
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>About Us</h2>
-
-    <div class="about-box">
-      <h3>Commercial and Residential Services</h3>
+    <div class="hero-content">
+      <div style="margin-bottom:1.5rem;">
+        <span class="section-label">
+          <span class="divider-line"></span>
+          Concrete &amp; Dirt Work Specialists
+        </span>
+      </div>
+      <h1>
+        Solid Ground.<br>
+        <span class="gold">Solid Work.</span><br>
+        Every Time.
+      </h1>
       <p>
-        Safety is central to our company values. We are committed to providing
-        a secure environment for employees and customers while delivering
-        quality concrete work.
+        Duran E Company specializes in concrete and dirt work —
+        from foundations and flatwork to site grading and excavation.
+        We get the job done right.
       </p>
+      <div class="hero-ctas">
+        <a href="projects.html" class="btn-primary">View Our Projects</a>
+        <a href="services.html" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Contact Us</h2>
-
-    <div class="contact-box">
-      <p><strong>Office:</strong> (979) 721-1204</p>
-      <p><strong>Cell:</strong> (979) 213-2797</p>
-      <p><strong>Email:</strong> efrain.duran33@gmail.com</p>
-      <p><strong>Email:</strong> cesar.duran48148@gmail.com</p>
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Years Experience</div>
     </div>
-  </section>
+    <div class="stat-item">
+      <div class="stat-number">300+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">99%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">35+</div>
+      <div class="stat-label">Crew Members</div>
+    </div>
+  </div>
+
+  <!-- SERVICES PREVIEW -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label"><span class="divider-line"></span>What We Do</span>
+      <h2>Two Trades.<br><span class="gold">Done Right.</span></h2>
+      <p>We keep it focused — concrete and dirt work, handled by our own crew with no subcontractors.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card gold-top">
+        <div class="service-icon">🧱</div>
+        <h2>Concrete Work</h2>
+        <p class="desc">Driveways, slabs, foundations, flatwork, curbs, retaining walls, and decorative concrete — poured right the first time.</p>
+        <ul class="service-list">
+          <li><span class="dot dot-gold"></span>Foundations &amp; Footings</li>
+          <li><span class="dot dot-gold"></span>Driveways &amp; Parking Lots</li>
+          <li><span class="dot dot-gold"></span>Concrete Slabs &amp; Flatwork</li>
+          <li><span class="dot dot-gold"></span>Sidewalks &amp; Pathways</li>
+          <li><span class="dot dot-gold"></span>Curbs &amp; Gutters</li>
+          <li><span class="dot dot-gold"></span>Stamped &amp; Decorative Concrete</li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <a href="services.html" class="btn-outline">All Services</a>
+        </div>
+      </div>
+
+      <div class="service-card rust-top">
+        <div class="service-icon">🚜</div>
+        <h2>Dirt Work</h2>
+        <p class="desc">Site clearing, grading, excavation, trenching, backfill, and land leveling for residential and commercial properties.</p>
+        <ul class="service-list">
+          <li><span class="dot dot-rust"></span>Site Clearing &amp; Demolition</li>
+          <li><span class="dot dot-rust"></span>Land Grading &amp; Leveling</li>
+          <li><span class="dot dot-rust"></span>Excavation</li>
+          <li><span class="dot dot-rust"></span>Trenching</li>
+          <li><span class="dot dot-rust"></span>Backfill &amp; Compaction</li>
+          <li><span class="dot dot-rust"></span>Drainage Solutions</li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <a href="services.html" class="btn-outline">All Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED PROJECTS -->
+  <div style="background:hsl(30 10% 8%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label"><span class="divider-line"></span>Our Portfolio</span>
+        <h2>Recent <span class="gold">Projects</span></h2>
+        <p>A sample of the concrete and dirt work we've completed across Texas.</p>
+      </div>
+
+      <div class="featured-grid">
+        <div class="project-card">
+          <img src="pictures/project-sprouts.jpg" alt="Commercial Interior Slab" class="project-photo">
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category cat-concrete">Concrete</span>
+              <span class="project-status status-completed">Completed</span>
+            </div>
+            <h3>Commercial Interior Slab &amp; Grading</h3>
+            <div class="project-location">📍 College Station, TX &nbsp;·&nbsp; 2026</div>
+            <div class="project-size">~25,809 sq ft</div>
+            <p class="project-desc">Interior concrete flatwork and site grading for a large commercial retail building.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="pictures/project-grandstand.jpg" alt="School Grandstand Foundation" class="project-photo">
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category cat-concrete">Concrete</span>
+              <span class="project-status status-completed">Completed</span>
+            </div>
+            <h3>School Grandstand Foundation</h3>
+            <div class="project-location">📍 College Station, TX &nbsp;·&nbsp; 2024</div>
+            <div class="project-size">~3,000 sq ft</div>
+            <p class="project-desc">Concrete foundation pour for a school grandstand using a pump truck.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="pictures/project-housepad.jpg" alt="House Pad & Porch" class="project-photo">
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-category cat-concrete">Concrete</span>
+              <span class="project-status status-completed">Completed</span>
+            </div>
+            <h3>House Pad &amp; Porch</h3>
+            <div class="project-location">📍 Iola, TX &nbsp;·&nbsp; 2026</div>
+            <div class="project-size">~2,300 sq ft</div>
+            <p class="project-desc">Residential house pad with full rebar grid, vapor barrier, and porch slab.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="projects.html" class="btn-primary">View All Projects</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Ready to Start Your <span class="gold">Project?</span></h2>
+    <p>Get an honest estimate from our team. No pressure — just straight talk about what the job takes.</p>
+    <div class="ctas">
+      <a href="quote.html" class="btn-primary">Get a Free Quote</a>
+      <a href="projects.html" class="btn-outline">See Our Work</a>
+    </div>
+  </div>
 
   <footer>
-    <p>Credits: Cesar Duran & Efrain Duran</p>
-    <p>Copyright 2025 DuraneCompany</p>
+    <div class="footer-brand">
+      <img src="logo.png" alt="Duran E Company">
+      <span>DURAN E <em>COMPANY</em></span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="quote.html">Get a Quote</a>
+    </div>
+    <div class="footer-copy">© 2025 Duran E Company. All rights reserved.</div>
   </footer>
 
+  <script>
+    const lines = document.getElementById('heroLines');
+    for (let i = 0; i < 12; i++) {
+      const d = document.createElement('div');
+      d.style.cssText = `height:2px;width:${60+i*15}px;background:hsl(38 95% 52%);margin-left:${(11-i)*5}px`;
+      lines.appendChild(d);
+    }
+  </script>
 </body>
 </html>
