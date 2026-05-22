@@ -677,6 +677,21 @@ nav {
   text-align: center;
 }
 
+.contact-card-link {
+  display: block;
+  transition: border-color 0.2s, transform 0.15s, background 0.2s;
+  cursor: pointer;
+}
+
+.contact-card-link:hover {
+  border-color: var(--gold);
+  background: hsl(38 95% 52% / 0.05);
+  transform: translateY(-2px);
+}
+
+.contact-card-link h4 { color: var(--muted); }
+.contact-card-link p { color: var(--text); }
+
 .contact-card .icon {
   font-size: 2rem;
   margin-bottom: 0.75rem;
